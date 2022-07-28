@@ -1,16 +1,16 @@
-html {
+html{
     font-family: sans-serif;
-    background: #f2f2f2;
-    padding: 1rem
+    background: #eee;
+    padding: 1rem;
 }
-body {
+body{
     max-width: 960px;
     margin: 0 auto;
     background: white;
 }
-h1 {
+h1{
     font-family: serif;
-    color: rgb(31, 77, 202);
+    color: #377ba8;
     margin: 1rem 0;
 }
 hr{
@@ -20,7 +20,18 @@ hr{
 .content{
     padding: 0 1rem 1rem;
 }
+.post > header > div:first-of-type{
+    flex: auto;
+}
 .post .about{
     color: slategray;
     font-style: italic;
 }
+.post .body{
+    white-space: pre-line;
+}
+.no-post{
+    font-style: italic;
+    color: grey;
+}
+
