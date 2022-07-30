@@ -88,3 +88,17 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
+@app.route('/create', methods=["GET", "POST"])
+@login_required
+def create():
+    if request.method == "POST":
+        title = request.form['title']
+        body = request.form['body']
+        try:
+            post = Post(title=title, body=body, author=current_user)
+            db.session.add(post)
+            db.session.commit()
+            return redirect(url_for('index'))
+        except IntegrityError:
+            flash("Error on create Post, try again later")
+    return render_template('create.html')
